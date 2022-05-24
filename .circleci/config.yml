@@ -1,0 +1,18 @@
+from socket import AF_APPLETALK
+import yfinance as yf
+import streamlit as st
+
+st.write('# APPLE')
+ticker = yf.Ticker('AAPL')
+df = ticker.history(period='max')
+st.line_chart(df.Close)
+
+st.write('# Microsoft')
+ticker = yf.Ticker('MSFT')
+df = ticker.history(period='max')
+st.line_chart(df.Close)
+
+st.write('# SP500')
+ticker = yf.Ticker('^GSPC')
+df = ticker.history(period='max')
+st.line_chart(df.Close)
